@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-
 header {
     /* background-color: rgb(203, 121, 63); */
     background-color: rgb(75, 49, 36);
@@ -51,6 +50,59 @@ header {
     background-color: rgb(182, 108, 55);
 }
 
+#menu_principal_mobile{
+    display: none;
+}
+
+#boton_menu_mobile {
+    height: 40px;
+    float:inline-end;
+    padding: 5px 10px;
+    margin:10px 10px;
+    font-size:30px;
+    color:#fff;
+    background-color: rgb(75, 49, 36);
+}
+
+#boton_menu_mobile:hover {
+    cursor: pointer;
+    background-color: rgb(182, 108, 55);
+}
+
+#menu_principal_mobile_opciones{
+    width: 100%;
+    height: 0;
+    /* transition: height 2s; */
+    display:none;
+    position:relative;
+    margin-top: 70px;
+    background-color: rgb(75, 49, 36);
+}
+
+#menu_principal_mobile_opciones a:hover{
+    width:100%;
+    cursor: pointer;
+    background-color: rgb(182, 108, 55);
+}
+
+#menu_principal_mobile ul {
+    /* margin: 70px; */
+    background-color: rgb(75, 49, 36);
+    padding: 0;
+    list-style-type: none;    
+}
+
+#menu_principal_mobile ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: rgb(182, 108, 55); */
+    background-color: rgb(75, 49, 36);
+    color:#fff;
+}
+
 main{
     width: 100%;
     min-height: 600px;
@@ -60,19 +112,27 @@ main{
 
 main h1{
     text-align: center;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
     font-size: 40px;
     background-color: rgb(182, 108, 55);  
     color: #fff;
 }
 
 #leyenda_titulo{
-    font-size: 20px;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
     padding: 10px;
     color: #000;
 }
 
 main .recetas{
-     padding:20px; 
+    padding:20px; 
 }
 
 main .recetas .receta {
@@ -107,22 +167,44 @@ main .recetas .receta img {
     object-fit:fill;
 }
 
-/* main .recetas .receta img:hover {
-    cursor:pointer;
-    transform: scale(1.1);
-    transition: 0.5s;
+/* 
+main .recetas .receta .wrapper_desc_receta {
+
 } */
 
+main .recetas .receta h2 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+    background-color:darkorange;
+}
+
 main .recetas .receta p {
+    font-family: "Indie Flower", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2em;
     text-align: justify;
+    word-wrap: break-word;
+    text-overflow: clip;
+    overflow: hidden;
+    height:150px;
     padding: 10px;
+}
+
+main .recetas .receta .timer {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2em;
+    position: relative;
+    padding: 5px;
+    margin: 0px;
+    text-align: right;
 }
 
 footer{
     padding: 0px;
     margin: 0px;
     height: 60px;
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(75, 49, 36);
     color: #fff;
 }
 
@@ -139,8 +221,26 @@ footer{
     padding-right: 10px;
 }
 
-@media (max-width: 640px) {
 
+/* MEDIA QUERY (RESPONSIVE) */
+
+@media (max-width: 640px) {
+    /* Tamaño mobile */
+    
+    #menu_principal{
+        display: none;
+    }
+
+    #menu_principal_mobile{
+        /* display:flow-root; */
+        display:block;
+        float:right;
+    }
+
+    main h1{
+        font-weight: 400;
+        font-size: 2.2em;
+    }
     .recetas{
         display: grid;
         text-align: center;
@@ -152,6 +252,7 @@ footer{
 }
 
 @media only screen and (min-width: 641px) and (max-width: 1023px) {
+    /* Tamaño tablet */
 
     .recetas{
         display: grid;
