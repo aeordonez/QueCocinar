@@ -1,0 +1,588 @@
+/*------------------------------------------------------------------------------------------------------------------*/
+/* PÁGINA INDEX.HTML Y MENU */
+/*------------------------------------------------------------------------------------------------------------------*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    /* background-color: rgb(203, 121, 63); */
+    background-color: rgb(75, 49, 36);
+    width: auto;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logo img {
+    width: 120px;
+    height: 60px;
+    float:left;
+}
+
+#menu_principal {
+    float:inline-end;
+    margin: 10px 10px;
+}
+
+#menu_principal ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+#menu_principal ul li {
+    display: inline;
+}
+
+#menu_principal ul li a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: rgb(182, 108, 55); */
+    background-color: rgb(75, 49, 36);
+    color:white;
+}
+
+#menu_principal ul li a:hover {
+    background-color: rgb(182, 108, 55);
+}
+
+#menu_principal_mobile{
+    display: none;
+}
+
+#boton_menu_mobile {
+    height: 40px;
+    float:inline-end;
+    padding: 5px 10px;
+    margin:10px 10px;
+    font-size:30px;
+    color:#fff;
+    background-color: rgb(75, 49, 36);
+}
+
+#boton_menu_mobile:hover {
+    cursor: pointer;
+    background-color: rgb(182, 108, 55);
+}
+
+#menu_principal_mobile_opciones{
+    width: 100%;
+    height: 0;
+    /* transition: height 2s; */
+    display:none;
+    position:relative;
+    margin-top: 70px;
+    background-color: rgb(75, 49, 36);
+}
+
+#menu_principal_mobile_opciones a:hover{
+    width:100%;
+    cursor: pointer;
+    background-color: rgb(182, 108, 55);
+}
+
+#menu_principal_mobile ul {
+    /* margin: 70px; */
+    background-color: rgb(75, 49, 36);
+    padding: 0;
+    list-style-type: none;    
+}
+
+#menu_principal_mobile ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: rgb(182, 108, 55); */
+    background-color: rgb(75, 49, 36);
+    color:#fff;
+}
+
+main{
+    width: 100%;
+    min-height: 600px;
+    height: auto;
+    background-color: rgb(243, 240, 190);
+    padding: 0px;
+}
+
+main h1{
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 40px;
+    background-color: rgb(182, 108, 55);  
+    color: #fff;
+}
+
+#leyenda_titulo{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    padding: 10px;
+    color: #000;
+}
+
+main .recetas{
+    padding:20px; 
+}
+
+main .recetas .receta {
+    border:gray solid 1.5px;
+    border-radius: 2%;
+    /* background-color: rgb(221, 172, 111); */
+    background-color: #fff;
+}
+
+main .recetas .receta:hover {
+    cursor:pointer;
+    transform: scale(1.05);
+    transition: 0.5s;
+    --opacidad-negro: 0.7;
+    /*efecto de oscurecimiento de la receta*/
+    background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro)));
+    color: #fff;
+}
+
+main .recetas .receta .wrapper_img_receta{
+    width: 100%;
+    height: 200px;
+    border-radius: 2%;
+    display: inline-block;
+    /*oculta el sobrante de la imagen al agrandarse en el hover*/
+    overflow: hidden;
+}
+
+main .recetas .receta .wrapper_img_receta img {
+    width: 100%;
+    height: 200px;
+    object-fit:fill;
+}
+
+
+main .recetas .receta h2 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+    background-color:darkorange;
+}
+
+main .recetas .receta p {
+    font-family: "Indie Flower", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2em;
+    text-align: justify;
+    word-wrap: break-word;
+    text-overflow: clip;
+    overflow: hidden;
+    height:150px;
+    padding: 10px;
+}
+
+main .recetas .receta .timer {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2em;
+    position: relative;
+    padding: 5px;
+    margin: 0px;
+    text-align: right;
+}
+
+footer{
+    padding: 0px;
+    margin: 0px;
+    height: 60px;
+    background-color: rgb(75, 49, 36);
+    color: #fff;
+}
+
+#datos{
+    float: left;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+#redes{
+    float: right;
+    font-size: 25px;
+    padding-top: 15px;
+    padding-right: 10px;
+}
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------*/
+/* PÁGINA RECETA.HTML */
+/*------------------------------------------------------------------------------------------------------------------*/
+main .contenedor_recetas {
+    margin-bottom: 10px;
+}
+
+main .receta .detalle {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: "foto preparacion preparacion"
+    "ingredientes preparacion preparacion";
+    gap: 10px;
+}
+
+main .receta .detalle .wrapper_img_receta{
+    /* width: 450px;
+    height: 300px; */
+    border-radius: 10px;
+    display: inline-block;
+    /*oculta el sobrante de la imagen al agrandarse en el hover*/
+    overflow: hidden;
+    margin-left: 10px;
+    grid-area: foto;
+} 
+
+
+main .receta .detalle .wrapper_img_receta img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+}
+
+
+main .receta .detalle .ingredientes {
+    border-radius: 10px;
+    background-color: rgb(205,195,130);
+    grid-area: ingredientes;
+    margin-left: 10px;
+}
+
+
+main .receta .detalle .ingredientes .tiempo h2{
+    border-radius: 5px;
+    background-color:darkorange;
+    color:#fff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+    font-size: 1.3em;
+    margin-top: 5px;
+}
+
+main .receta .detalle .ingredientes .tiempo .timer{
+    margin-top: 5px;
+    margin-left: 10px;
+    font-family: "Indie Flower", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+main .receta .detalle .ingredientes h2{
+    border-radius: 5px;
+    background-color:darkorange;
+    color:#fff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+    font-size: 1.3em;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+main .receta .detalle .ingredientes ul{
+    margin-top: 10px;
+    margin-left: 20px;
+    font-family: "Indie Flower", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1em;
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+main .receta .detalle .preparacion {
+    border-radius: 10px;
+    background-color: #fff;
+    background-color: rgb(233, 231, 230);
+    grid-area: preparacion;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+main .receta .detalle .preparacion h2 {
+    border-radius: 5px;
+    background-color:darkorange;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+    font-size: 1.3em;
+    margin-top: 5px;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+main .receta .detalle .preparacion p {
+    margin-left:10px;
+    margin-right:10px;
+    font-family: "Indie Flower", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1em;
+    text-align: justify;
+    word-wrap: break-word;
+    padding-bottom: 15px;
+}
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------*/
+/* PÁGINA NOSOTROS.HTML */
+/*------------------------------------------------------------------------------------------------------------------*/
+main ul {
+    list-style-type: none;
+}
+
+.Participantes {
+    color: rgb(151, 31, 31);
+    list-style: none;
+    text-decoration: none;
+    font-style: 20;
+    font-family: "Caveat", cursive;}
+    .parrafo {text-decoration: none; 
+}
+    
+.primero {
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    padding: 10px;
+    color: #000;
+}
+.segundo { 
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    padding: 10px;
+    color: #000;
+    text-align: justify;}
+    tercero { font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    padding: 10px;
+    color: #000;
+    text-align: justify;
+    margin: 10px;
+}
+
+.miembros{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    padding: 10px;
+    color: #000;
+}
+
+.cuarto{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    padding: 10px;
+    color: #000;
+    text-align: justify;
+    margin: 10px;
+}
+
+.quinto{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    padding: 10px;
+    color: #000;
+    text-align: justify;
+    margin: 10px; 
+}
+
+.sexto{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    padding: 10px;
+    color: #000;
+    text-align: justify;
+    margin: 10px;
+}
+
+.fotos{ 
+    border: #1b0e0e solid;
+    border-radius: 5px;
+}
+
+.imagenes{
+    display:flex;
+    justify-content: center;
+}
+
+h3 { 
+    display: flex; text-align: center;
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------------*/
+/* PÁGINA CONTACTO.HTML */
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------*/
+/* MEDIA QUERY (RESPONSIVE) */
+/*------------------------------------------------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------*/
+/* TAMAÑO MOBILE */
+/*----------------------------------------------------------------------*/
+@media (max-width: 640px) {
+    /* Tamaño mobile */
+    
+    #menu_principal{
+        display: none;
+    }
+
+    #menu_principal_mobile{
+        /* display:flow-root; */
+        display:block;
+        float:right;
+    }
+
+    main h1{
+        font-weight: 400;
+        font-size: 2.2em;
+    }
+    .recetas{
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2,1fr);
+        /*Espacio entre celdas*/
+        gap: 50px;
+    }
+    
+    /*--------------------------------------------------------------------------------------*/
+    /* pagina receta.html */
+    /*--------------------------------------------------------------------------------------*/
+    main .receta .detalle .wrapper_img_receta{
+        margin-right: 10px;
+    } 
+    
+    main .receta .detalle .wrapper_img_receta img{
+        width: 100%;
+        height: 100%;
+    } 
+
+    main .receta .detalle {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-areas: "foto"
+        "ingredientes"
+        "preparacion";
+        gap: 10px;
+    }
+
+    main .receta .detalle .ingredientes {
+        margin-left:10px;
+        margin-right:10px;
+    }
+
+}
+
+/*----------------------------------------------------------------------*/
+/* TAMAÑO TABLET */
+/*----------------------------------------------------------------------*/
+@media only screen and (min-width: 641px) and (max-width: 1023px) {
+    /* Tamaño tablet */
+
+    .recetas{
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2,1fr);
+         /*Espacio entre celdas*/
+        gap: 50px;
+    }
+
+    /*--------------------------------------------------------------------------------------*/
+    /* pagina receta.html */
+    /*--------------------------------------------------------------------------------------*/
+    main .receta .detalle .wrapper_img_receta{
+        /* margin-right: 10px; */
+        width: 100%;
+        height: 100%;
+        /* display: grid; */
+    } 
+    
+    main .receta .detalle {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-areas: "foto ingredientes "
+        "preparacion preparacion";
+        margin-right: 10px;
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    main .receta .detalle .ingredientes {
+        margin-left:10px;
+        margin-right:10px;
+    }
+
+}
+
+/*----------------------------------------------------------------------*/
+/* PANTALLA GRANDE */
+/*----------------------------------------------------------------------*/
+@media (min-width: 1024px) {
+    .recetas{
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2,1fr);
+         /*Espacio entre celdas*/
+        gap: 50px;
+    }
+}
