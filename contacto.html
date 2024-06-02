@@ -7,15 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@700&display=swap">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@700&family=Indie+Flower&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@700&family=Indie+Flower&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="shortcut icon" href="img/logo3.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <title>Qué cocinar</title>
-  
+    <link rel="shortcut icon" href="img/logo3.jpg" type="image/x-icon">
 </head>
 
 <body>
@@ -44,7 +41,7 @@
         </div>
     </header>
 
-    <main>
+    <main  onclick="OcultarMenuMobile()">
         <section>
             <div class="para-contactarnos">
                 <h2>Contacto</h2>
@@ -139,6 +136,17 @@
                         <button class="boton" type="submit" onclick="reset()">Reset</button>
                     </div>
 
+                    <div class="grupo" id="terminos-div">
+                        <div class="mensaje" id="mensaje">
+                            <p><i class="fas fa-exclamation-triangle"></i><b>Error:</b>Completa correctamente el
+                                formulario </p>
+                        </div>
+                    </div>
+
+                    <div class="formulario-grupo formulario-grupo-btn-enviar">
+                        <button type="submit" onclick="reset()">Reset</button>
+
+                    </div>
                 </form>
                 <div>
                     <menu class="container-map">
