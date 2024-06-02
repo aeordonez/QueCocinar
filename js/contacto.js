@@ -82,7 +82,7 @@ formulario.addEventListener('submit', (e) => {
         document.getElementById('mensaje-exitoso').classList.add('mensaje-exitoso-activo');
         setTimeout(() => {
             document.getElementById('mensaje-exitoso').classList.remove('mensaje-exitoso-activo');
-        }, 2000);
+        }, 5000);
 
         document.querySelectorAll('.grupo-correcto').forEach((icono) => {
             icono.classList.remove('grupo-correcto');
