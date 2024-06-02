@@ -80,6 +80,7 @@ header {
     position:relative;
     margin-top: 70px;
     background-color: rgb(75, 49, 36);
+    z-index: 1;
 }
 
 #menu_principal_mobile_opciones a:hover{
@@ -227,8 +228,8 @@ footer{
 /*------------------------------------------------------------------------------------------------------------------*/
 /* PÁGINA RECETA.HTML */
 /*------------------------------------------------------------------------------------------------------------------*/
-main .contenedor_recetas {
-    margin-bottom: 10px;
+main .contenedor_receta {
+    padding-bottom: 20px;
 }
 
 main .receta .detalle {
@@ -349,6 +350,366 @@ main .receta .detalle .preparacion p {
 
 
 /*------------------------------------------------------------------------------------------------------------------*/
+/* PÁGINA NOSOTROS.HTML */
+/*------------------------------------------------------------------------------------------------------------------*/
+.quienes-somos h2{
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 40px;
+    background-color: rgb(182, 108, 55);
+    color: #fff;
+}
+
+.quienes-somos p{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    padding: 10px;
+    color: #000;
+    text-align: center;
+}
+
+main .nosotros {
+    padding: 20px;
+   }
+
+main .nosotros .integrantes {
+    border: gray solid 1.5px;
+    border-radius: 2%;
+    background-color: #fff;
+}
+
+main .nosotros .integrantes:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.5s;
+    --opacidad-negro: 0.7;
+    /*efecto de oscurecimiento de la receta*/
+    background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro)));
+    color: #fcf9f9;
+}
+
+
+main .nosotros .integrantes .wrapper_img_cocinero {
+    width: 100%;
+    height: 300px;
+    border-radius: 2%;
+    display: inline-block;
+    /*oculta el sobrante de la imagen al agrandarse en el hover*/
+    overflow: hidden;
+}
+
+main .nosotros .integrantes .wrapper_img_cocinero img {
+    width: 100%;
+    height: 300px;
+    object-fit: fill;
+}
+
+
+main .nosotros .integrantes h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+    background-color: darkorange;
+}
+
+main .nosotros .integrantes p {
+    font-family: "Indie Flower", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2em;
+    text-align: justify;
+    word-wrap: break-word;
+    text-overflow: clip;
+    overflow: hidden;
+    height: 150px;
+    padding: 15px;
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------------*/
+/* PÁGINA CONTACTO.HTML */
+/*------------------------------------------------------------------------------------------------------------------*/
+main .contenedor_contacto {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; 
+    /* background-image: url('../img/vista-aerea-ingredientes-alimentarios-saludables-herramientas-mesa-madera-blanca.jpg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    border: 1px solid;
+}
+
+
+main .para-contactarnos p {
+font-family: "Caveat", cursive;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
+font-size: 25px;
+padding: 10px;
+color: #000;
+text-align: center;
+}
+
+
+main .contenedor-formulario {
+position: relative;
+width: 100%;
+max-width: 60%;
+background-color: rgb(221, 188, 126);
+padding: 60px;
+text-align: center;
+border: 1px solid;
+border-radius: 10px;
+margin-top: 10px;
+margin-bottom: 10px;
+z-index: 0;
+}
+
+main .contenedor-formulario h2 {
+margin-bottom: 60px;
+position: relative;
+}
+
+main .contenedor-formulario h2 ::after {
+width: 50px;
+height: 4px;
+border-radius: 3px;
+background-color: rgb(243, 224, 190);
+position: absolute;
+}
+
+main .container-map{
+border: 1px solid;
+border-radius: 10px;
+}
+
+main .label {
+display: flex;
+cursor: pointer;
+}
+
+main .grupo-input {
+position: relative;
+}
+
+main .input-datos {
+width: 100%;
+background-color: rgb(221, 188, 126);
+margin: 15px 0;
+padding: 20px;
+border: 1px solid;
+border-radius: 5px;
+height: 45px;
+transition: .3s ease all;
+display: flex;
+align-items: center;
+/* overflow: hidden; */
+line-height: 45px;
+}
+
+main .input-datos:focus {
+border: 1px solid;
+outline: none;
+}
+
+main .input-error {
+font-size: 12px;
+margin-bottom: 0;
+display: none;
+}
+
+main .input-error-activo {
+display: block;
+}
+
+main .validacion-estado {
+position: absolute;
+left: 1px;
+bottom: 15px;
+}
+
+main .validacion-estado2 {
+position: absolute;
+color: rgb(39, 158, 39);
+right: 1px;
+bottom: 15px;
+z-index: 100;
+font-size: 16px;
+opacity: 0;
+}
+
+main .comentarios {
+display: block;
+color: rgb(75, 49, 36);
+
+}
+
+.select-country{
+width: 100%;
+display: flex;
+text-align: left;
+font-family: "Dancing Script", cursive;
+font-optical-sizing: auto;
+font-style: normal;
+background-color: rgb(182, 108, 55);
+color: #fff;
+position: relative;
+}
+
+.country{
+    display: flex;
+    float: left;
+    margin: 10px auto;
+    border: 1px  black solid;
+    border-radius: 5px;
+    padding: 10px;
+    background-color:rgb(221, 188, 126); 
+}
+
+
+main .comentarios textarea {
+width: 100%;
+background-color: rgb(221, 188, 126);
+border: 1px solid;
+border-radius: 5px;
+resize: none;
+}
+
+main .checkbox {
+margin: 0;
+}
+
+main .grupo-terminos,
+.grupo-mensaje,
+.grupo-formulario-grupo-btn-enviar {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+main .mensaje {
+float: left;
+width: 100%;
+height: 100%;
+line-height: 45px;
+background-color: rgb(209, 56, 56);
+padding: 0 5px;
+border-radius: 3px;
+display: none;
+}
+
+main .mensaje-activo {
+display: block;
+flex-direction: column;
+align-items: center;
+margin: 5px 0;
+}
+
+main .mensaje p {
+margin: 0;
+}
+
+main .formulario-grupo-btn-enviar {
+display: block;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 15px 0;
+}
+
+
+main .boton {
+display: flex;
+margin-top: 5px;
+text-align: center;
+justify-content: center;
+height: 45px;
+line-height: 45px;
+width: 100%;
+background-color: rgb(75, 49, 36);
+color: rgb(243, 224, 190);
+border: 1px;
+border-radius: 3px;
+cursor: pointer;
+transition: .1s ease all;
+}
+
+main .boton:hover {
+color: rgb(75 49 36);
+background-color: rgb(243 224 190);
+}
+
+main .boton-activo {
+display: none;
+}
+
+main .mensaje-exitoso {
+font-size: 14px;
+color: rgb(39, 158, 39);
+display: none;
+}
+
+main .mensaje-exitoso-activo {
+display: block;
+}
+
+
+#div1 {
+width: 75%;
+height: 75%;
+margin: auto;
+background-color: rgb(221, 188, 126);
+padding: 80px 20px;
+border: 1px solid;
+border-radius: 5px;
+resize: none;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------*/
+/* VALIDACIONES DE ESTILOS*/
+/*------------------------------------------------------------------------------------------------------------------*/
+
+main .grupo-correcto .validacion-estado {
+color: rgb(39, 158, 39);
+opacity: 1;
+}
+
+main .grupo-correcto .validacion-estado2 {
+color: rgb(39, 158, 39);
+opacity: 1;
+}
+
+main .grupo-incorrecto .label {
+color: red;
+}
+
+main .grupo-incorrecto .validacion-estado2 {
+color: red;
+opacity: 1;
+}
+
+main .grupo-incorrecto .input-datos {
+border: 3px solid red;
+}
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------*/
 /* MEDIA QUERY (RESPONSIVE) */
 /*------------------------------------------------------------------------------------------------------------------*/
 
@@ -382,7 +743,7 @@ main .receta .detalle .preparacion p {
     }
     
     /*--------------------------------------------------------------------------------------*/
-    /* pagina receta.html */
+    /* TAMAÑO MOBILE: pagina receta.html */
     /*--------------------------------------------------------------------------------------*/
     main .receta .detalle .wrapper_img_receta{
         margin-right: 10px;
@@ -410,6 +771,29 @@ main .receta .detalle .preparacion p {
         margin-right:10px;
     }
 
+
+    /*--------------------------------------------------------------------------------------*/
+    /* TAMAÑO MOBILE: pagina nosotros.html */
+    /*--------------------------------------------------------------------------------------*/
+    .nosotros{
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        /*Espacio entre celdas*/
+        gap: 50px;
+    }
+
+
+    /*--------------------------------------------------------------------------------------*/
+    /* TAMAÑO MOBILE: pagina contacto.html */
+    /*--------------------------------------------------------------------------------------*/
+    main .contenedor-formulario {
+        max-width: 90%;
+        padding: 30px;
+    }
+        
+ 
 }
 
 /*----------------------------------------------------------------------*/
@@ -428,7 +812,7 @@ main .receta .detalle .preparacion p {
     }
 
     /*--------------------------------------------------------------------------------------*/
-    /* pagina receta.html */
+    /* TAMAÑO TABLET: pagina receta.html */
     /*--------------------------------------------------------------------------------------*/
     main .receta .detalle .wrapper_img_receta{
         /* margin-right: 10px; */
@@ -455,12 +839,29 @@ main .receta .detalle .preparacion p {
         margin-right:10px;
     }
 
+
+    /*--------------------------------------------------------------------------------------*/
+    /* TAMAÑO TABLET: pagina nosotros.html */
+    /*--------------------------------------------------------------------------------------*/
+    .nosotros{
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        /*Espacio entre celdas*/
+        gap: 50px;
+    }
+
+
 }
 
 /*----------------------------------------------------------------------*/
 /* PANTALLA GRANDE */
 /*----------------------------------------------------------------------*/
 @media (min-width: 1024px) {
+    /*--------------------------------------------------------------------------------------*/
+    /* PANTALLA GRANDE: pagina receta.html */
+    /*--------------------------------------------------------------------------------------*/
     .recetas{
         display: grid;
         text-align: center;
@@ -469,4 +870,15 @@ main .receta .detalle .preparacion p {
          /*Espacio entre celdas*/
         gap: 50px;
     }
+    /*--------------------------------------------------------------------------------------*/
+    /* PANTALLA GRANDE: pagina nosotros.html */
+    /*--------------------------------------------------------------------------------------*/    
+    .nosotros{
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(3, 1fr);
+        /*Espacio entre celdas*/
+        gap: 50px; 
+    }
+
 }
