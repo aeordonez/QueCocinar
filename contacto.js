@@ -3,18 +3,20 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 // almaceno todos los input del formulario
 
+const textarea = document.getElementById('comentarios');
+const div1 = document.getElementById('div1');
+const terminos = document.getElementById('terminos');
+
 const expresiones = {
-    nombre: /^[a-zA-ZÀ-ÿ\s]{3,20}$/,
-    apellido: /^[a-zA-ZÀ-ÿ\s]{3,20}$/,
+    nombre: /^[a-zA-ZÀ-ÿ\s]{2,20}$/,
+    apellido: /^[a-zA-ZÀ-ÿ\s]{2,20}$/,
     correo: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
-    // password: /^.{4,12}$/,
     telefono: /^[09][0-9]{6,9}$/
 }
 
 const campos = {
     nombre: false,
     apellido: false,
-    // password: false,
     correo: false,
     telefono: false
 }
@@ -31,13 +33,7 @@ const validarFormulario = (e) => {
         case "correo":
             validarCampo(expresiones.correo, e.target, 'correo');
             break;
-        // case "password":
-        //     validarCampo(expresiones.password, e.target, 'password');
-        //     validarPassword2()
-        //     break;
-        // case "password2":
-        //     validarPassword2()
-        //     break;
+     
         case "telefono":
             validarCampo(expresiones.telefono, e.target, 'telefono');
             break;
@@ -63,44 +59,26 @@ const validarCampo = (expresion, input, campo) => {
     }
 }
 
-// const validarPassword2 = () => {
-//     const inputPassword1 = document.getElementById('password');
-//     const inputPassword2 = document.getElementById('password2');
 
-//     if(inputPassword1.value !== inputPassword2.value){
-//         document.getElementById(`password2`).classList.add('grupo-incorrecto');
-//         document.getElementById(`password2`).classList.remove('grupo-correcto');
-//         document.querySelector(`#password2 i`).classList.add('fa-times-circle');
-//         document.querySelector(`#password2 i`).classList.remove('fa-check-circle');
-//         document.querySelector(`#password2.input-error`).classList.add('input-error-activo');
-//         campos['password'] = false;
-//     }else{
-//         document.getElementById(`password2`).classList.remove('grupo-incorrecto');
-//         document.getElementById(`password2`).classList.add('grupo-correcto');
-//         document.querySelector(`#password2 i`).classList.remove('fa-times-circle');
-//         document.querySelector(`#password2 i`).classList.add('fa-check-circle');
-//         document.querySelector(`#password2.input-error`).classList.remove('input-error-activo')
-//         campos['password'] = true;
-//     }
-// }
 
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
 });
-// accedo a cada input y x cada input ejecute un codigo
+
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
-    // prevengo que se ejecute el boton enviar y envie datos  ante un evento
 
-    const terminos = document.getElementById('terminos')
+    // const terminos = document.getElementById('terminos')
     if (campos.nombre && campos.apellido && campos.correo
-        // && campos.password
         && campos.telefono
         && terminos.checked
-    ) {
-        formulario.reset();
+     ) 
+    
+    {
+     formulario.reset();
+
         document.getElementById('mensaje-exitoso').classList.add('mensaje-exitoso-activo');
         setTimeout(() => {
             document.getElementById('mensaje-exitoso').classList.remove('mensaje-exitoso-activo');
@@ -108,12 +86,70 @@ formulario.addEventListener('submit', (e) => {
 
         document.querySelectorAll('.grupo-correcto').forEach((icono) => {
             icono.classList.remove('grupo-correcto');
-        })
-    }
-    else {
+
+            // alert("Los datos fueron enviados satisfactoriamente")
+        });
+    }else {
         document.getElementById('mensaje').classList.add('mensaje-activo');
+     setTimeout(() => {
+            document.getElementById('mensaje').classList.remove('mensaje-activo');
+        }, 5000);
 
-     
+      document.querySelectorAll('.grupo-incorrecto').forEach((icono) => {
+        icono.classList.remove('grupo-incorrecto');
+      })}
 
-    }
-})
+  })
+ 
+function resetFormulario() {
+
+    document.querySelectorAll('.grupo-correcto').forEach((icono) => {
+        icono.classList.remove('grupo-correcto');
+    });
+    document.querySelectorAll('.grupo-incorrecto').forEach((icono) => {
+        icono.classList.remove('grupo-incorrecto');
+    });
+    document.querySelectorAll('.input-error-activo').forEach((mensajeError) => {
+        mensajeError.classList.remove('input-error-activo');
+    });
+    document.querySelectorAll('.fa-check-circle').forEach((icono) => {
+        icono.classList.remove('fa-check-circle');
+    });
+    document.querySelectorAll('.fa-times-circle').forEach((icono) => {
+        icono.classList.remove('fa-times-circle');
+    });
+}
+
+
+  const apiUrl = 'https://restcountries.com/v3/all';
+
+
+  async function getCountries(){
+      try {
+          const response = await fetch(apiUrl);
+          
+          if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          
+          const countries = await response.json();
+  
+          const countryNames = countries.map(country => country.name.common);
+          
+          const selectElement = document.getElementById('country');
+        //   console.log('country')
+          
+          countryNames.forEach(name => {
+              countryNames.sort()
+              const option = document.createElement('option');
+              option.value = name;
+              option.textContent = name;
+              selectElement.appendChild(option);
+          });
+      } catch (error) {
+          console.error(`Error: ${error.message}`);
+      }
+  }
+  
+  
+  getCountries()
