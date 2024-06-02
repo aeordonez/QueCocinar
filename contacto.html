@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qué cocinar</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="/contacto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@700&family=Indie+Flower&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Qué cocinar</title>
+    <link rel="shortcut icon" href="img/logo3.jpg" type="image/x-icon">
 </head>
 
 <body>
@@ -20,9 +22,9 @@
         </div>
         <nav id="menu_principal" onclick="OcultarMenuMobile()">
             <ul>
-                <li><a href="./index.html">Recetario</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="index.html">Recetario</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
 
@@ -31,20 +33,24 @@
             <a id="boton_menu_mobile" class="bi bi-list" onclick="MostrarMenuMobile();"></a>
             <div id="menu_principal_mobile_opciones">
                 <ul>
-                    <!-- <li><a href="#">Inicio</a></li> -->
-                    <li><a href="#">Recetario</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="index.html">Recetario</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <main>
-        <div class="contenedor">
-            <div class="contenedor-formulario">
-                <h1 id="titulo">Contacto</h1>
-                <form action="" class="formulario" id="formulario">
+    <main onclick="OcultarMenuMobile()">
+        <section>
+            <div>
+                <h1>Contacto</h1>
+            </div>
+        </section>
+
+        <div class="contenedor_contacto">
+            <section class="contenedor-formulario">
+                <form class="formulario" id="formulario">
 
                     <div class="grupo" id="nombre">
                         <label for="nombre" class="label">Nombre</label>
@@ -54,7 +60,7 @@
                                 id="nombre">
                             <i class="validacion-estado2 fas fa-times-circle"></i>
                         </div>
-                        <p class="input-error">Ingresa tu nombre</p>
+                        <p class="input-error">Este campo es obligatorio, ingresa tu nombre.</p>
                     </div>
 
                     <div class="grupo" id="apellido">
@@ -65,7 +71,7 @@
                                 id="apellido">
                             <i class="validacion-estado2 fas fa-times-circle"></i>
                         </div>
-                        <p class="input-error">Ingresa tu apellido</p>
+                        <p class="input-error">Este campo es obligatorio, ingresa tu apellido.</p>
                     </div>
 
                     <div class="grupo" id="telefono">
@@ -76,7 +82,7 @@
                                 id="telefono">
                             <i class="validacion-estado2 fas fa-times-circle"></i>
                         </div>
-                        <p class="input-error">Solo puede contener numeros y maximo 14</p>
+                        <p class="input-error">Tu numero debe empezar con 0 contener entre 6 y 9 numeros</p>
                     </div>
 
                     <div class="grupo" id="correo">
@@ -87,55 +93,60 @@
                                 id="correo">
                             <i class="validacion-estado2 fas fa-times-circle"></i>
                         </div>
-                        <p class="input-error">El correo solo puede contener, letras, numeros puntos, guiones</p>
+                        <p class="input-error">El correo debe contener al menos 1 letra mayuscula, letras minusculas,
+                            numeros, puntos y/o guiones</p>
                     </div>
 
-                    <!-- <div class="grupo" id="password">
-                        <label for="password" class="label">Contraseña</label>
-                        <div class="grupo-input">
-                            <i class="validacion-estado fa-solid fa-lock"></i>
-                            <input name="password" type="password" placeholder="ingresa tu password" class="input-datos" id="password">
-                            <i class="validacion-estado2 fas fa-times-circle"></i>
-                        </div>
-                        <p class="input-error">Tu contraseña debe contener entre 8 y 12 digitos</p>
+
+                    <div>
+                        <select class="country" id="country">
+                            <option value="">Seleccione un pais</option>
+                        </select>
                     </div>
 
-                    <div class="grupo" id="password2">
-                        <label for="password2" class="label">Repetir Contraseña</label>
-                        <div class="grupo-input">
-                            <i class="validacion-estado fa-solid fa-lock"></i>
-                            <input name="password2" type="password" placeholder="ingresa tu password2" class="input-datos" id="password2">
-                            <i class="validacion-estado2 fas fa-times-circle"></i>
-                        </div>
-                        <p class="input-error">Las contraseñas deben ser iguales</p>
-                    </div> -->
+                  
 
+                        <label class="comentarios" for="comentarios">
+                            <textarea name="comentarios" id="comentarios" placeholder="Ingrese su comentario" cols="100%" rows="15"></textarea>
+                        </label>
 
-                    <label class="comentarios" for="comentarios">Comentarios: <br>
-                        <textarea name="comentarios" id="comentarios" cols="100%" rows="15"></textarea>
-                    </label>
+                   
 
-
-                    <div class="grupo" id="terminos-div">
+                    <div>
                         <label class="label">
                             <input class="checkbox" type="checkbox" name="terminos" id="terminos">
-                            Acepto terminos y condiciones
-                        </label>
+                            Acepto terminos y condiciones</label>
                     </div>
-
-                    <div class="mensaje" id="mensaje">
-                        <p><i class="fas fa-exclamation-triangle"></i><b>Error:</b>Completa correctamente el formulario
-                        </p>
-                    </div>
-
 
                     <div class="formulario-grupo formulario-grupo-btn-enviar">
                         <button type="submit" class="boton">Enviar</button>
                         <p class="mensaje-exitoso" id="mensaje-exitoso">Formulario enviado exitosamente</p>
                     </div>
 
+                    <div class="grupo" id="terminos-div">
+                        <div class="mensaje" id="mensaje">
+                            <p><i class="fas fa-exclamation-triangle"></i><b>Error:</b>Completa correctamente el
+                                formulario </p>
+                        </div>
+                    </div>
+
+                    <div class="formulario-grupo formulario-grupo-btn-enviar">
+                        <button type="submit" onclick="reset()">Reset</button>
+
+                    </div>
                 </form>
-            </div>
+                <div>
+                    <menu class="container-map">
+                        <a
+                            href="https://www.google.com/maps/place/Blvd.+Hip%C3%B3lito+Yrigoyen+840,+Concepci%C3%B3n+del+Uruguay,+Entre+R%C3%ADos/@-32.4775587,-58.2386424,17z/data=!3m1!4b1!4m5!3m4!1s0x95afda55ee46bdc9:0x658b715f5752dacb!8m2!3d-32.4775633!4d-58.2360675?entry=ttu"></a>
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3365.8178562506787!2d-58.23864242503577!3d-32.47756327379015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95afda55ee46bdc9%3A0x658b715f5752dacb!2sBlvd.%20Hip%C3%B3lito%20Yrigoyen%20840%2C%20Concepci%C3%B3n%20del%20Uruguay%2C%20Entre%20R%C3%ADos!5e0!3m2!1ses-419!2sar!4v1711492915002!5m2!1ses-419!2sar"
+                            width="100%" height="450" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </menu>
+                </div>
+            </section>
         </div>
     </main>
     <footer>
@@ -150,9 +161,7 @@
             <i class="bi bi-twitch"></i>
         </div>
     </footer>
-    <!-- <script src="js/menu.js"></script> -->
-    <script src="contacto.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/contacto.js"></script>
 
 </body>
-
-</html>
