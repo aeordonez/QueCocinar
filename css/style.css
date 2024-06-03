@@ -441,7 +441,6 @@ main .contenedor_contacto {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center; 
-    /* background-image: url('../img/vista-aerea-ingredientes-alimentarios-saludables-herramientas-mesa-madera-blanca.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
