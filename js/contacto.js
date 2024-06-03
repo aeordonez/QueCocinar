@@ -11,7 +11,7 @@ const expresiones = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{2,20}$/,
     apellido: /^[a-zA-ZÀ-ÿ\s]{2,20}$/,
     correo: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
-    telefono: /^[09][0-9]{6,9}$/
+    telefono: /^[09][0-9]{6,11}$/
 }
 
 const campos = {
