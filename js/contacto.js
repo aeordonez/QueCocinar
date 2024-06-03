@@ -8,10 +8,10 @@ const div1 = document.getElementById('div1');
 const terminos = document.getElementById('terminos');
 
 const expresiones = {
-    nombre: /^[a-zA-ZÀ-ÿ\s]{2,20}$/,
-    apellido: /^[a-zA-ZÀ-ÿ\s]{2,20}$/,
+    nombre: /^[a-zA-ZÀ-ÿ\s]{3,20}$/,
+    apellido: /^[a-zA-ZÀ-ÿ\s]{3,20}$/,
     correo: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
-    telefono: /^[09][0-9]{6,11}$/
+    telefono: /^[09][0-9]{6,9}$/
 }
 
 const campos = {
@@ -77,23 +77,20 @@ formulario.addEventListener('submit', (e) => {
      ) 
     
     {
-     formulario.reset();
-
-        document.getElementById('mensaje-exitoso').classList.add('mensaje-exitoso-activo');
+    formulario.reset();
+     document.getElementById('mensaje-exitoso').classList.add('mensaje-exitoso-activo');
         setTimeout(() => {
             document.getElementById('mensaje-exitoso').classList.remove('mensaje-exitoso-activo');
-        }, 5000);
+        }, 2000);
 
         document.querySelectorAll('.grupo-correcto').forEach((icono) => {
             icono.classList.remove('grupo-correcto');
-
-            // alert("Los datos fueron enviados satisfactoriamente")
         });
     }else {
         document.getElementById('mensaje').classList.add('mensaje-activo');
      setTimeout(() => {
             document.getElementById('mensaje').classList.remove('mensaje-activo');
-        }, 5000);
+        }, 2000);
 
       document.querySelectorAll('.grupo-incorrecto').forEach((icono) => {
         icono.classList.remove('grupo-incorrecto');
@@ -119,6 +116,16 @@ function resetFormulario() {
         icono.classList.remove('fa-times-circle');
     });
 }
+
+
+function validarGenero(){
+    let seleccionarGenero=document.getElementById('genero');
+    if(seleccionarGenero.value==0 || seleccionarGenero.value==''){
+        alert('Seleccione una opcion para continuar')
+        seleccionarGenero.focus();
+    }else alert('Opcion seleccionada con exito');
+    seleccionarGenero.focus()
+  }
 
 
   const apiUrl = 'https://restcountries.com/v3/all';
